@@ -60,11 +60,11 @@ int main() {
     Name: {} {}.
     Age: {} (Adult: {})
     ZipCode: {}
-    Hourly Wage: ${.2f}
+    Hourly Wage: ${:.2f}
     Total Hours Worked: {}
     Gross Income: ${:.2f}
-    Tax Amount: ${.2f}
-    Net Income: ${.2f}
+    Tax Amount: ${:.2f}
+    Net Income: ${:.2f}
 
     )",
     name, initial,
