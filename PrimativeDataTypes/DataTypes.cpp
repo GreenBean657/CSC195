@@ -17,6 +17,8 @@ std::array<float, 3> calculateIncomes(const float wage, const float totalHours, 
 
 int main() {
 
+    const float TAX = 0.1f;
+
     string name;
     char initial;
     short age;
@@ -26,8 +28,6 @@ int main() {
     float hoursWorkedPerDay[7];
     float totalHours = 0;
 
-    const float TAX = 0.1f;
-
     std::cout << "Enter First Name: ";
     std::cin >> name;
 
@@ -36,7 +36,6 @@ int main() {
 
     std::cout << "Enter Age: ";
     std::cin >> age;
-    bool isAdult = (age >= 18);
 
     std::cout << "Enter Zipcode: ";
     std::cin >> zipcode;
@@ -69,7 +68,7 @@ int main() {
 
     )",
     name, initial,
-    age, (isAdult ? "Yes" : "No"),
+    age, ((age >= 18) ? "Yes" : "No"),
     zipcode,
     wage,
     totalHours,
