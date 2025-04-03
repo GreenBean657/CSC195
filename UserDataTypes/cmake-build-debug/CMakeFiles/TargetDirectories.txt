@@ -1,0 +1,3 @@
+/home/GreenBean/CLionProjects/CSC195/UserDataTypes/cmake-build-debug/CMakeFiles/UserDataTypes.dir
+/home/GreenBean/CLionProjects/CSC195/UserDataTypes/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/GreenBean/CLionProjects/CSC195/UserDataTypes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
