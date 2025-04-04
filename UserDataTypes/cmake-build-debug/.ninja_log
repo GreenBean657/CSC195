@@ -1,0 +1,10 @@
+# ninja log v6
+0	47	1743727374806959521	CMakeFiles/UserDataTypes.dir/main.cpp.o.ddi	c768561a208d3420
+1	60	1743727374807959479	CMakeFiles/UserDataTypes.dir/Employee.cpp.o.ddi	572142cc7a090850
+60	64	1743727374872194448	CMakeFiles/UserDataTypes.dir/CXX.dd	d2da527803b827c9
+60	64	1743727374872194448	/home/GreenBean/CLionProjects/CSC195/UserDataTypes/cmake-build-debug/CMakeFiles/UserDataTypes.dir/CXXModules.json	d2da527803b827c9
+60	64	1743727374872194448	CMakeFiles/UserDataTypes.dir/main.cpp.o.modmap	d2da527803b827c9
+60	64	1743727374872194448	CMakeFiles/UserDataTypes.dir/Employee.cpp.o.modmap	d2da527803b827c9
+65	342	1743727374872194448	CMakeFiles/UserDataTypes.dir/main.cpp.o	a5dfec4b439e316e
+65	974	1743727374872768838	CMakeFiles/UserDataTypes.dir/Employee.cpp.o	3ab109873535a0e0
+974	1018	1743727375780918900	UserDataTypes	6147944b8b209b2a

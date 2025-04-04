@@ -41,7 +41,6 @@ void Employee::Write() {
     Gross Income: ${:.2f}
     Tax Amount: ${:.2f}
     Net Income: ${:.2f}
-
     )",
     name, initial,
     age, ((age >= 18) ? "Yes" : "No"),
