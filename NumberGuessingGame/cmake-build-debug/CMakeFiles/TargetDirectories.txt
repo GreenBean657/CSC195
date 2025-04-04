@@ -1,0 +1,3 @@
+/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame/cmake-build-debug/CMakeFiles/NumberGuessingGame.dir
+/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame/cmake-build-debug/CMakeFiles/rebuild_cache.dir
