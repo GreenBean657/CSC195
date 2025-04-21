@@ -1,9 +1,5 @@
-
-
 #include "cpuwidget.h"
-
 #include "cpu.h"
-
 
 void CPUWidget::setSocket(QString socket) {
     auto computerPart = dynamic_cast<CPU *>(part);
