@@ -109,28 +109,28 @@ bool GuessingGame::run() {
  * @return TRUE: player Requested to play again, FALSE: player does not want to keep playing.
  */
 bool GuessingGame::play() {
-    bool success = false;
-    while (!success) {
-        std::string difficulty;
-        std::cout << "Select a difficulty (1 = easy/2 = medium/3 = hard): ";
-        std::cin >> difficulty;
+    while (true) {
 
-        if (difficulty == "1" || difficulty == "easy") {
-            maxNumber = 10;
+        try {
+            std::string number;
+            std::cout << "Enter the upper bound number: ";
+            std::cin >> number;
+
+            const unsigned short guessNumber = std::stoi(number);
+
+            if (guessNumber < 1) {
+                std::cout << "That wasn't a valid number! Try again." << std::endl;
+                continue;
+            }
+
+            maxNumber = guessNumber;
             randomNumber = getRandomNumber(1, maxNumber);
-            success = true;
-        } else if (difficulty == "2" || difficulty == "medium") {
-            maxNumber = 50;
-            randomNumber = getRandomNumber(1, maxNumber);
-            success = true;
-        } else if (difficulty == "3" || difficulty == "hard") {
-            maxNumber = 100;
-            randomNumber = getRandomNumber(1, maxNumber);
-            success = true;
-        } else {
-            std::cout << "Invalid difficulty. Try again." << std::endl;
+            break;
+        } catch (const std::exception &exception) {
+            std::cout << "That wasn't a number! Try again." << std::endl;
         }
     }
+
     return run();
 }
 

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>698</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="EditorWidget" name="editorWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="DbView" name="dbView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="addButton_GPU">
+          <property name="text">
+           <string>GPU</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addButton_CPU">
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="addButton_RAM">
+          <property name="text">
+           <string>RAM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeButton">
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::ListRemove"/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>698</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DbView</class>
+   <extends>QListView</extends>
+   <header>dbview.h</header>
+   <slots>
+    <slot>deleteSelected()</slot>
+    <slot>createNewGPU()</slot>
+    <slot>createNewCPU()</slot>
+    <slot>createNewRAM()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>EditorWidget</class>
+   <extends>QWidget</extends>
+   <header>editorwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>addButton_RAM</sender>
+   <signal>clicked()</signal>
+   <receiver>dbView</receiver>
+   <slot>createNewRAM()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>502</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>dbView</receiver>
+   <slot>deleteSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>502</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addButton_CPU</sender>
+   <signal>clicked()</signal>
+   <receiver>dbView</receiver>
+   <slot>createNewCPU()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>485</x>
+     <y>501</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addButton_GPU</sender>
+   <signal>clicked()</signal>
+   <receiver>dbView</receiver>
+   <slot>createNewGPU()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>501</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

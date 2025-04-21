@@ -1,4 +1,3 @@
-#include "GuessingGame.h"
 #include "GuessingGameExecute.h"
 
 int main() {

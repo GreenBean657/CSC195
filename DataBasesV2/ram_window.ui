@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RAMWidget</class>
+ <widget class="QWidget" name="RAMWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>DDR Revision</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="RAM_Revision">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>DDR</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DDR2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DDR3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DDR4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DDR5</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Frequency</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="RAM_Freq">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>CL Latency</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="RAM_CL">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>RAM_CL</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>RAMWidget</receiver>
+   <slot>changeCL(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RAM_Freq</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>RAMWidget</receiver>
+   <slot>changeFreq(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RAM_Revision</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>RAMWidget</receiver>
+   <slot>DDR_R_Change(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>changeCL(QString)</slot>
+  <slot>changeFreq(QString)</slot>
+  <slot>DDR_R_Change(int)</slot>
+ </slots>
+</ui>

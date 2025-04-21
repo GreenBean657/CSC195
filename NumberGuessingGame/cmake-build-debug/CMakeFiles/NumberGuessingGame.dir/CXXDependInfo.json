@@ -1,0 +1,18 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame/cmake-build-debug",
+	"dir-cur-src" : "/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame",
+	"dir-top-bld" : "/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame/cmake-build-debug",
+	"dir-top-src" : "/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/GreenBean/CLionProjects/CSC195/NumberGuessingGame/cmake-build-debug/CMakeFiles/NumberGuessingGame.dir"
+}

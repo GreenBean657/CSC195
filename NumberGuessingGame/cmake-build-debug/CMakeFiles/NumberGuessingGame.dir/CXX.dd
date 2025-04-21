@@ -1,0 +1,7 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/NumberGuessingGame.dir/main.cpp.o: dyndep
+
+build CMakeFiles/NumberGuessingGame.dir/GuessingGame.cpp.o: dyndep
+
+build CMakeFiles/NumberGuessingGame.dir/GuessingGameExecute.cpp.o: dyndep
+
