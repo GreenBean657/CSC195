@@ -48638,14 +48638,13 @@ int main() {
     shapes.push_back(rectObj);
     for (const auto & shape : shapes) {
         cout << "Area: " << shape->Area() << endl;
-        auto* circle = dynamic_cast<Circle*>(shape);
-        if (circle != nullptr) {
+        if (const auto* circle = dynamic_cast<Circle*>(shape); circle != nullptr) {
             cout << "Radius: " << circle->GetRadius() << endl;
         }
         cout << "-============-" << endl;
     }
 
-    for (Shape* obj : shapes) {
+    for (const Shape* obj : shapes) {
         delete obj;
     }
     return 0;
