@@ -48636,9 +48636,9 @@ int main() {
     auto* rectObj = new Rectangle(4.0f, 5.0f);
     shapes.push_back(circleObj);
     shapes.push_back(rectObj);
-    for (int i = 0; i < shapes.size(); i++) {
-        cout << "Area: " << shapes[i]->Area() << endl;
-        auto* circle = dynamic_cast<Circle*>(shapes[i]);
+    for (const auto & shape : shapes) {
+        cout << "Area: " << shape->Area() << endl;
+        auto* circle = dynamic_cast<Circle*>(shape);
         if (circle != nullptr) {
             cout << "Radius: " << circle->GetRadius() << endl;
         }
