@@ -37,10 +37,43 @@ public:
      */
     void setPCIeRevision(const QString&);
 
+
     /**
      * @brief Change the PCIe slot, based on an index.
      */
     void setPCIeSlot(int);
+
+
+
+    //LOADING FUNCTIONS
+
+    int getConnectionStandard_Loadables() const {
+        if (connectionStandard == PCI) {
+            return 0;
+        }
+        if (connectionStandard == PCIe) {
+            return 1;
+        }
+        if (connectionStandard == AGP) {
+            return 2;
+        }
+        return 0;
+    }
+
+    void setConnectionStandard_Loadables(const int value) {
+        connectionStandard = revisionTable[value];
+    }
+
+    int getPCIeRevision_Loadables() const {
+        return PCIeRevision;
+    }
+    void setPCIeRevision_Loadables(int revision) {
+        if (revision >= 1 && revision <= 5) {
+            PCIeRevision = revision;
+        } else {
+            throw std::out_of_range("Invalid PCIe revision");
+        }
+    }
 private:
     CONNECTION_STANDARD connectionStandard;
     int PCIeRevision;

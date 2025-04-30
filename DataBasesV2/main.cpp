@@ -1,4 +1,6 @@
 #include <ui_mainwindow.h>
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);

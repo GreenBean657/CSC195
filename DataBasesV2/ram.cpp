@@ -38,6 +38,7 @@ void RAM::setFreq(std::string freq) {
 
 void RAM::setDDR(int ddr) {
     this->ddrRevision = this->revisionTable[ddr];
+
 }
 
 void RAM::setClLatency(std::string clLatency) {

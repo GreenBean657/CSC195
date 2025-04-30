@@ -24,17 +24,25 @@ public:
         this->socket = setablesocket;
     }
 
+    std::string getSocket() const {
+        return this->socket;
+    }
+
+    int getCoreCount() const {
+        return this->coreCount;
+    }
+
     /**
     * @brief Set the Core Count, based on a string.
     * UNPROTECTED - Will except if the string is not a valid revision.
     * CATCH the exception in the calling function.
     */
     void setCoreCount(std::string set_able_core_count) {
-        if (coreCount >= 0) {
-            this->coreCount = std::stoi(set_able_core_count);
-        } else {
-            throw std::invalid_argument("Core count must be greater than 0");
-        }
+        this->coreCount = std::stoi(set_able_core_count);
+    }
+
+    void setCoreCountLoadable(int coreCount) {
+        this->coreCount = coreCount;
     }
 
 protected:

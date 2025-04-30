@@ -48,7 +48,44 @@ public:
      */
     void setDDR(int level);
 
+    int getDDR() const {
+        return this->ddrRevision;
+    }
 
+    int getFreq() const {
+        return this->freq;
+    }
+
+    int getClLatency() const {
+        return this->clLatency;
+    }
+
+    void setCLLatency_LOADABLES(const int latency) {
+        this->clLatency = latency;
+    }
+
+    void setFreq_LOADABLES(const int frequency) {
+        this->freq = frequency;
+    }
+
+    int getDDR_LOADABLES() const {
+        if (ddrRevision == DDR1) {
+            return 0;
+        }
+        if (ddrRevision == DDR2) {
+            return 1;
+        }
+        if (ddrRevision == DDR3) {
+            return 2;
+        }
+        if (ddrRevision == DDR4) {
+            return 3;
+        }
+        if (ddrRevision == DDR5) {
+            return 4;
+        }
+        return 0;
+    }
 
 private:
     DDR_REVISION ddrRevision;

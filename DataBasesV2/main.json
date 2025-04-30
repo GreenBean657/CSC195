@@ -1,0 +1,19 @@
+{
+    "parts": [
+        {
+            "connectionStandard": 0,
+            "pcieRevision": 1,
+            "type": "GPU"
+        },
+        {
+            "connectionStandard": 1,
+            "pcieRevision": 2,
+            "type": "GPU"
+        },
+        {
+            "connectionStandard": 2,
+            "pcieRevision": 3,
+            "type": "GPU"
+        }
+    ]
+}

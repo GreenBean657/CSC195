@@ -31,6 +31,8 @@ public:
     QHBoxLayout *horizontalLayout_2;
     EditorWidget *editorWidget;
     QVBoxLayout *verticalLayout;
+    QPushButton *buttonLoad;
+    QPushButton *buttonSave;
     DbView *dbView;
     QHBoxLayout *horizontalLayout;
     QPushButton *addButton_GPU;
@@ -61,6 +63,16 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        buttonLoad = new QPushButton(centralwidget);
+        buttonLoad->setObjectName(QString::fromUtf8("buttonLoad"));
+
+        verticalLayout->addWidget(buttonLoad);
+
+        buttonSave = new QPushButton(centralwidget);
+        buttonSave->setObjectName(QString::fromUtf8("buttonSave"));
+
+        verticalLayout->addWidget(buttonSave);
+
         dbView = new DbView(centralwidget);
         dbView->setObjectName(QString::fromUtf8("dbView"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Expanding);
@@ -116,6 +128,8 @@ public:
         QObject::connect(removeButton, SIGNAL(clicked()), dbView, SLOT(deleteSelected()));
         QObject::connect(addButton_CPU, SIGNAL(clicked()), dbView, SLOT(createNewCPU()));
         QObject::connect(addButton_GPU, SIGNAL(clicked()), dbView, SLOT(createNewGPU()));
+        QObject::connect(buttonLoad, SIGNAL(clicked()), dbView, SLOT(load()));
+        QObject::connect(buttonSave, SIGNAL(clicked()), dbView, SLOT(save()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -123,6 +137,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        buttonLoad->setText(QCoreApplication::translate("MainWindow", "LOAD", nullptr));
+        buttonSave->setText(QCoreApplication::translate("MainWindow", "SAVE", nullptr));
         addButton_GPU->setText(QCoreApplication::translate("MainWindow", "GPU", nullptr));
         addButton_CPU->setText(QCoreApplication::translate("MainWindow", "CPU", nullptr));
         addButton_RAM->setText(QCoreApplication::translate("MainWindow", "RAM", nullptr));

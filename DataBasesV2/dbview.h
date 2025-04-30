@@ -11,6 +11,10 @@ public:
     explicit DbView(QWidget *parent = nullptr);
 
 public slots:
+
+    void load();
+    void save();
+
     void createNewCPU();
     void createNewGPU();
     void createNewRAM();

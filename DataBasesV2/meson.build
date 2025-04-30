@@ -14,7 +14,7 @@ ui_sources = [
 
 main_ui = qt6.compile_ui(sources : ui_sources)
 
-moc_files = qt6.compile_moc(headers : ['dbview.h', 'editorwidget.h', 'cpuwidget.h', 'ramwidget.h'],
+moc_files = qt6.compile_moc(headers : ['dbview.h', 'editorwidget.h'],
     dependencies : qt6_dep)
 
 sources = [
@@ -25,7 +25,6 @@ sources = [
     'editorwidget.cpp',
     'cpu.cpp',
     'ram.cpp',
-    'cpuwidget.cpp'
 ]
 
 executable('DataBasesV2', sources, main_ui, moc_files,
