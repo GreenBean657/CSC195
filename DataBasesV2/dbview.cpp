@@ -40,6 +40,7 @@ void DbView::save() {
 
       } else if (dynamic_cast<RAM *>(dbList->item(row))) {
         RAM* ram = dynamic_cast<RAM*>(dbList->item(row));
+
         object["type"] = "RAM";
         object["ddrRevision"] = ram->getDDR();
         object["freq"] = ram->getFreq();
@@ -59,7 +60,7 @@ void DbView::save() {
   QJsonDocument document(main);
 
   std::string jsonData = document.toJson(QJsonDocument::Indented).toStdString();
-  std::ofstream outFile("saved.txt");
+  std::ofstream outFile("saved.json");
 
   outFile << jsonData;
   outFile.close();
@@ -68,23 +69,21 @@ void DbView::save() {
 
 void DbView::load() {
 
-  std::ifstream inFile("saved.txt");
+  std::ifstream inFile("saved.json");
   if (!inFile) {
     QMessageBox::warning(this, "Error", "Could not open file with ifstream!");
     return;
   }
 
-  // Read file contents into a std::string
   std::string fileContents((std::istreambuf_iterator<char>(inFile)),
                             std::istreambuf_iterator<char>());
   inFile.close();
 
-  // Convert std::string to QByteArray
   QByteArray data = QByteArray::fromStdString(fileContents);
   QJsonDocument extracted_file(QJsonDocument::fromJson(data));
 
   if (extracted_file.isNull()) {
-    QMessageBox::warning(this, "Error", "Invalid contents, you sure you opened the right file?");
+    QMessageBox::warning(this, "Error", "Invalid contents.");
     return;
   }
 
